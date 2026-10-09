@@ -6,32 +6,23 @@
 #define IS_CAPITAL(C) (C >= 'A' && C <= 'Z')
 
 #if KEEP_LOWERCASE
-
 #define UPPER_BASE 'a'
-#define LOWER_BASE 'a'
-
-#elif KEEP_UPPERCASE
-
-#define UPPER_BASE 'A'
-#define LOWER_BASE 'A'
-
 #else
-
 #define UPPER_BASE 'A'
-#define LOWER_BASE 'a'
+#endif
 
+#if KEEP_UPPERCASE
+#define LOWER_BASE 'A'
+#else
+#define LOWER_BASE 'a'
 #endif
 
 #if DECODE_MODE
-
 #define TERM 26
 #define FACTOR -1
-
 #else
-
 #define TERM 0
 #define FACTOR 1
-
 #endif
 
 int main(int argc, const char **argv)
